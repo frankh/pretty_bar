@@ -51,7 +51,7 @@ class PrettyBar
     blank_len = @len - success_len - fail_len
 
     print "|" + color("#" * success_len).green + color("#" * fail_len).red + " " * blank_len + "|"
-    print " #{@success}/#{@count} (#{@fails} fails)"
+    print " #{@success+@fails}/#{@count} (#{@fails} fails)"
     # \r means next line will overwrite this one
     print "\r"
   end
