@@ -21,30 +21,28 @@ class ColorString < String
 end
 
 class PrettyBar
-  count = 100
-  success = 0
-  fails = 0
-
-  len = 60
 
   def initialize(count=100)
-    self.count = count
+    @count = count
+    @success = 0
+    @fails = 0
+    @len = 60
   end
 
   def add_success!
-    self.success += 1
-    self.print_progress
+    @success += 1
+    @print_progress
   end
 
   def add_fail!
-    self.fails += 1
-    self.print_progress
+    @fails += 1
+    @print_progress
   end
 
   def print_progress
-    success = self.success
-    count = self.count
-    fails = self.fails
+    success = @success
+    count = @count
+    fails = @fails
 
     success_len = ((success.to_f / count) * len).to_i
     fail_len = ((fails.to_f / count) * len).to_i
