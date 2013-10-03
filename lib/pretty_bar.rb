@@ -1,4 +1,6 @@
 puts PrettyBar
+puts PrettyBar.class
+
 class PrettyBar
 
   class ColorString < String
