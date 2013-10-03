@@ -40,16 +40,12 @@ class PrettyBar
   end
 
   def print_progress
-    success = @success
-    count = @count
-    fails = @fails
-
-    success_len = ((success.to_f / count) * len).to_i
-    fail_len = ((fails.to_f / count) * len).to_i
-    blank_len = len - success_len - fail_len
+    success_len = ((@success.to_f / @count) * @len).to_i
+    fail_len = ((@fails.to_f / @count) * @len).to_i
+    blank_len = @len - success_len - fail_len
 
     print "|" + ColorString("#" * success_len).green + ColorString("#" * fail_len).red + " " * blank_len + "|"
-    print " #{success}/#{count} (#{fails} fails)"
+    print " #{@success}/#{@count} (#{@fails} fails)"
     # \r means next line will overwrite this one
     print "\r"
   end
