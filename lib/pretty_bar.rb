@@ -1,7 +1,5 @@
-puts PrettyBar
-puts PrettyBar.class
-
 class PrettyBar
+  VERSION = "0.0.1"
 
   class ColorString < String
     def black;          "\033[30m#{self}\033[0m" end
