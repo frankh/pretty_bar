@@ -31,6 +31,8 @@ class PrettyBar
     @success = 0
     @fails = 0
     @len = 60
+
+    print_progress
   end
 
   def add_success!
