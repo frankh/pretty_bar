@@ -31,12 +31,12 @@ class PrettyBar
 
   def add_success!
     @success += 1
-    @print_progress
+    print_progress
   end
 
   def add_fail!
     @fails += 1
-    @print_progress
+    print_progress
   end
 
   def print_progress
