@@ -50,7 +50,7 @@ class PrettyBar
     fail_len = ((fails.to_f / count) * len).to_i
     blank_len = len - success_len - fail_len
 
-    print "|" + ("#" * success_len).green + ("#" * fail_len).red + " " * blank_len + "|"
+    print "|" + ColorString("#" * success_len).green + ColorString("#" * fail_len).red + " " * blank_len + "|"
     print " #{success}/#{count} (#{fails} fails)"
     # \r means next line will overwrite this one
     print "\r"
